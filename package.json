@@ -1,9 +1,10 @@
 {
-  "name": "react-native-android-shell",
+  "name": "@flyskywhy/react-native-android-shell",
   "title": "React Native Android Shell",
   "version": "1.3.1",
   "description": "This module for execute shell android, use command and execute shell",
   "main": "index.js",
+  "private": false,
   "files": [
     "README.md",
     "android",
@@ -14,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/M-Julius/react-native-android-shell.git",
-    "baseUrl": "https://github.com/M-Julius/react-native-android-shell"
+    "url": "git+https://github.com/flyskywhy/react-native-android-shell.git",
+    "baseUrl": "https://github.com/flyskywhy/react-native-android-shell"
   },
   "keywords": [
-    "react-native", 
-    "android-shell", 
-    "react", 
-    "shell", 
+    "react-native",
+    "android-shell",
+    "react",
+    "shell",
     "execute-shell",
     "android",
     "react-native-shell"
