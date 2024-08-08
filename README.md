@@ -3,7 +3,7 @@
 [![npm version](http://img.shields.io/npm/v/@flyskywhy/react-native-android-shell.svg?style=flat-square)](https://npmjs.org/package/@flyskywhy/react-native-android-shell "View this project on npm")
 [![npm downloads](http://img.shields.io/npm/dm/@flyskywhy/react-native-android-shell.svg?style=flat-square)](https://npmjs.org/package/@flyskywhy/react-native-android-shell "View this project on npm")
 [![npm licence](http://img.shields.io/npm/l/@flyskywhy/react-native-android-shell.svg?style=flat-square)](https://npmjs.org/package/@flyskywhy/react-native-android-shell "View this project on npm")
-[![Platform](https://img.shields.io/badge/platform-ios%20%7C%20android-989898.svg?style=flat-square)](https://npmjs.org/package/@flyskywhy/react-native-android-shell "View this project on npm")
+[![Platform](https://img.shields.io/badge/platform-android-989898.svg?style=flat-square)](https://npmjs.org/package/@flyskywhy/react-native-android-shell "View this project on npm")
 
 This module is for execute shell command on android.
 
