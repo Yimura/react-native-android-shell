@@ -4,6 +4,7 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,6 +25,54 @@ public class AndroidShellModule extends ReactContextBaseJavaModule {
     @Override
     public String getName() {
         return "AndroidShell";
+    }
+
+    @ReactMethod
+    public void executeCommand(final String[] commands, final Promise promise) {
+        return executeCommand(String.join(" ", commands), promise);
+    }
+
+    @ReactMethod
+    public void executeCommand(final String command, final Promise promise) {
+        OutputStream out = null; 
+        InputStream in = null; 
+        try { 
+            // Send script into runtime process 
+            Process child = Runtime.getRuntime().exec(command);
+
+            // Get input and output streams 
+            out = child.getOutputStream(); 
+            in = child.getInputStream();
+
+            // Input stream can return anything
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in)); 
+            String line; 
+            String result = ""; 
+            while ((line = bufferedReader.readLine()) != null) {
+                result += line+"\n";
+            }
+
+            // Handle input stream returned message
+            promise.resolve(result); 
+        } catch (IOException e) {
+            promise.reject("Exception while running command: ", e.printStackTrace());
+        } finally { 
+            if (in != null) { 
+                try { 
+                    in.close(); 
+                } catch (IOException e) { 
+                    e.printStackTrace(); 
+                } 
+            } 
+            if (out != null) { 
+                try { 
+                    out.flush(); 
+                    out.close(); 
+                } catch (IOException e) { 
+                    e.printStackTrace(); 
+                } 
+            } 
+        }
     }
 
     @ReactMethod
