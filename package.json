@@ -7,9 +7,11 @@
   "types": "types/index.d.ts",
   "private": false,
   "files": [
-    "README.md",
-    "android",
-    "index.js"
+    "android/",
+    "types/",
+    "index.js",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
