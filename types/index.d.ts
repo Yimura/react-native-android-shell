@@ -5,3 +5,6 @@ declare class AndroidShell {
     public static executeCommand(command: string): Promise<string>;
     public static executeCommand(commands: string[]): Promise<string>;
 }
+
+export { AndroidShell };
+export default AndroidShell;
